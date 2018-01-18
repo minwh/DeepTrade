@@ -1,5 +1,5 @@
 dataset
 checkpoint
 graphs
-#*.pyc
+*.pyc
 
