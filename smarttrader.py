@@ -230,6 +230,7 @@ def main(operation='train', code=None):
     hidden_size = 14
     nclasses = 1
     validation_size = 700
+    #validation_size = 240 * 30
     keep_rate = 0.7
 
     selector = ["ROCP", "OROCP", "HROCP", "LROCP", "MACD", "RSI", "VROCP", "BOLL", "MA", "VMA", "PRICE_VOLUME"]
@@ -242,6 +243,8 @@ def main(operation='train', code=None):
         val_features = []
         val_labels = []
         for filename in os.listdir(dataset_dir):
+            if code is not None and filename != code + '.csv':
+                continue
             #if filename != '000001.csv':
             #    continue
             print("processing file: " + filename)
